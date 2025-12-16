@@ -1,0 +1,334 @@
+/*body{
+    background-color: brown;
+    overflow: hidden;
+}
+
+
+main::after{
+    content:"" ;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+/*background: #021014;
+background: radial-gradient(circle, rgba(2, 16, 20, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+
+}
+
+
+main .personagem{
+    display: none;
+    height: 100vh;
+}
+
+
+main .personagem.selecionado{
+    display: block;
+}
+
+main .personagem .imagem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo{
+    
+    position: absolute;
+    top: 0;
+    left: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+
+.conteudo .nome-personagem{
+   
+    color: blue;
+font-size: 48px;
+font-family: "Secular One", sans-serif;
+font-weight: 400;
+margin-bottom: 30px;
+
+}
+
+
+.conteudo .descricao{
+   
+    color: red;
+     font-family: "Rubik", sans-serif;
+     font-size: 18px;
+     line-height: 25px;
+}
+
+
+
+
+.conteudo .logo{
+   
+    background-image: url("/amimes/A_Berserk.webp");
+    height: 100px;
+    width: 230px;
+    background-size: cover;
+    margin-bottom: 36px;
+}
+
+
+
+.botoes{
+    position: fixed;
+    top: 0;
+right: 0;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+justify-content: center;
+gap: 10px;
+background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+.botoes .botao{
+    border: none;
+    background: none;
+    cursor: pointer;
+     border-radius: 
+    50%;
+
+}
+
+
+.botoes .botao img{
+    border-radius: 
+    50%;
+}
+
+
+
+.botoes .botao.selecionado{
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #d9d9d9;
+}
+
+
+
+
+.personagem {
+    display: none;
+}
+.personagem.selecionado {
+    display: block;
+}
+.botao {
+    opacity: 0.5;
+}
+.botao.selecionado {
+    opacity: 1;
+}
+.logo {
+    display: none;
+}
+.personagem.selecionado.berserker .logo {
+    display: block;
+}
+
+
+
+
+.logo {
+    display: none;
+    width: 50px; /* Ajuste o tamanho conforme necessário 
+    height: 50px;
+    background-image: url('./jogos/sua-logo.png'); 
+    background-size: cover;
+}
+
+
+
+.personagem.selecionado.berserker .logo {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+*/
+
+body {
+    background-color: brown;
+    overflow: hidden;
+}
+
+main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+    /*background: #021014;
+    background: radial-gradient(circle, rgba(2, 16, 20, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);*/
+}
+
+body {
+    background-color: brown;
+    overflow: hidden;
+}
+
+main::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+}
+
+main .personagem {
+    display: none;
+    height: 100vh;
+    position: relative;
+}
+
+main .personagem.selecionado {
+    display: block;
+}
+
+main .personagem .imagem {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: brightness(60%);
+    transition: filter 0.7s ease;
+}
+
+.conteudo {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 2;
+}
+
+.conteudo .nome-personagem {
+    color: #00b7ff; /* Azul vibrante */
+    font-size: 48px;
+    font-family: "Secular One", sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)); /* Quadro transparente */
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 183, 255, 0.5); /* Brilho azul */
+    padding: 12px 24px;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+}
+
+main .personagem.animating .conteudo .nome-personagem {
+    animation: pulseFrame 0.7s ease forwards;
+}
+
+.conteudo .descricao {
+    color: #ff4d4d; /* Vermelho vibrante */
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.2); /* Fundo leve para legibilidade */
+    border-radius: 4px;
+}
+
+.conteudo .logo {
+    display: none;
+    background-image: url("/amimes/A_Berserk.webp");
+    height: 100px;
+    width: 230px;
+    background-size: cover;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 0.7s ease forwards;
+}
+
+.personagem.selecionado.berserker .conteudo .logo {
+    display: block;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 4; /* Acima de tudo */
+}
+
+.botoes .botao {
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    opacity: 1;
+}
+
+main .personagem.animating .conteudo::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background: linear-gradient(to right, transparent, #00b7ff, transparent); /* Risco azul brilhante */
+    transform: rotate(-45deg);
+    z-index: 2;
+    opacity: 0;
+    animation: slideIn 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: rotate(-45deg) translateX(100%); opacity: 0; }
+    to { transform: rotate(-45deg) translateX(0); opacity: 1; }
+}
+
+@keyframes pulseFrame {
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 183, 255, 0.5); }
+    50% { transform: scale(1.15); box-shadow: 0 0 30px rgba(0, 183, 255, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 183, 255, 0.5); }
+}

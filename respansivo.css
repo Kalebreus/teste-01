@@ -1,0 +1,264 @@
+/*@media(max-width:769px){
+    
+main::after{
+    width: 100vw;
+}
+main .personagem .imagem{
+height: 85%;
+}
+.conteudo{
+    justify-content: flex-end;
+    left: 0;
+    top: -20%;
+    max-width: 100vw;
+    padding: 30px;
+}
+
+.conteudo .nome-personagem{
+    font-size: 36px;
+}
+
+.conteudo .descricao{
+    max-width: 500px;
+}
+
+.botoes{
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+    padding: 30px;
+}
+
+.botoes .botao img{
+    max-width: 60px;
+}
+
+}
+
+
+
+@media(max-width:425px){
+    main .personagem{
+        height: auto;
+    }
+
+    .conteudo .logo{
+        width: 170px;
+        height: 75px;
+    }
+    .botoes{
+        padding: 20px;
+        top: -20%;
+    }
+}*/
+
+@media (max-width: 768px) {
+    main::after {
+        width: 100vw;
+    }
+
+    main .personagem {
+        height: 100vh;
+        position: relative;
+    }
+
+    main .personagem .imagem {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(60%);
+        transition: filter 0.7s ease;
+    }
+
+    .conteudo {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); /* Centraliza verticalmente */
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        z-index: 3;
+    }
+
+    .conteudo .nome-personagem {
+        font-size: 36px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 15px rgba(0, 183, 255, 0.5);
+        padding: 8px 16px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+    }
+
+    main .personagem.animating .conteudo .nome-personagem {
+        animation: pulseFrame 0.7s ease forwards;
+    }
+
+    .conteudo .descricao {
+        max-width: 90%;
+        font-size: 16px;
+        line-height: 22px;
+        padding: 8px;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        margin-bottom: 30px; /* Espaço extra para separação */
+    }
+
+    .conteudo .logo {
+        display: none;
+        background-image: url("/amimes/A_Berserk.webp");
+        height: 80px;
+        width: 180px;
+        background-size: cover;
+        margin-bottom: 15px;
+        opacity: 0;
+        animation: fadeIn 0.7s ease forwards;
+    }
+
+    .personagem.selecionado.berserker .conteudo .logo {
+        display: block;
+    }
+
+    .botoes {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.7); /* Fundo mais escuro */
+        z-index: 5; /* Acima de tudo */
+        margin-top: 30px; /* Separação clara do conteudo */
+    }
+
+    .botoes .botao {
+        margin: 0 8px; /* Espaço entre botões */
+    }
+
+    .botoes .botao img {
+        max-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .conteudo .nome-personagem {
+        font-size: 30px;
+        padding: 6px 12px;
+        margin-bottom: 12px;
+    }
+
+    .conteudo .descricao {
+        font-size: 14px;
+        line-height: 20px;
+        max-width: 95%;
+        margin-bottom: 25px;
+    }
+
+    .conteudo .logo {
+        width: 150px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .botoes {
+        padding: 12px;
+    }
+
+    .botoes .botao img {
+        max-width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 425px) {
+    main .personagem {
+        height: 100vh;
+    }
+
+    .conteudo .nome-personagem {
+        font-size: 26px;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+    }
+
+    .conteudo .descricao {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .conteudo .logo {
+        width: 130px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .botoes {
+        padding: 10px;
+    }
+
+    .botoes .botao img {
+        max-width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 320px) {
+    .conteudo .nome-personagem {
+        font-size: 22px;
+        padding: 4px 8px;
+        margin-bottom: 8px;
+    }
+
+    .conteudo .descricao {
+        font-size: 12px;
+        line-height: 16px;
+        margin-bottom: 15px;
+    }
+
+    .conteudo .logo {
+        width: 100px;
+        height: 50px;
+        margin-bottom: 8px;
+    }
+
+    .botoes {
+        padding: 8px;
+    }
+
+    .botoes .botao img {
+        max-width: 35px;
+        height: 35px;
+    }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: rotate(-45deg) translateX(100%); opacity: 0; }
+    to { transform: rotate(-45deg) translateX(0); opacity: 1; }
+}
+
+@keyframes pulseFrame {
+    0% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 183, 255, 0.5); }
+    50% { transform: scale(1.15); box-shadow: 0 0 25px rgba(0, 183, 255, 0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 15px rgba(0, 183, 255, 0.5); }
+}
